@@ -24,7 +24,7 @@
 
     <h2>How to request deletion</h2>
     <ol>
-      <li>Send an email from the address you used to sign up for RecipEZ to <a class="contact-email" href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a> with the subject <strong>"Delete my RecipEZ account"</strong>. Include your username if you remember it. You can use the form below to write the email for you.</li>
+      <li>Send an email from the address you used to sign up for RecipEZ to <a class="contact-email" href="#">(enable JavaScript to see our email)</a> with the subject <strong>"Delete my RecipEZ account"</strong>. Include your username if you remember it. You can use the form below to write the email for you.</li>
       <li>If the request comes from a different address than the one on the account, we will reply to the account's email address to confirm before deleting anything.</li>
       <li>We delete the account within 30 days and email you when it is done.</li>
     </ol>
@@ -64,16 +64,16 @@
 
   <footer>&copy; 2026 RecipEZ</footer>
 
+  <script src="contact.js"></script>
   <script>
     document.getElementById('delete-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      var to = document.querySelector('.contact-email').getAttribute('href').replace('mailto:', '');
       var email = document.getElementById('account-email').value.trim();
       var username = document.getElementById('username').value.trim();
       var body = 'Please delete my RecipEZ account and all associated data.\n\n' +
         'Account email: ' + email + '\n' +
         'Username: ' + (username || '(not provided)') + '\n';
-      window.location.href = 'mailto:' + to +
+      window.location.href = 'mailto:' + CONTACT_EMAIL +
         '?subject=' + encodeURIComponent('Delete my RecipEZ account') +
         '&body=' + encodeURIComponent(body);
     });
